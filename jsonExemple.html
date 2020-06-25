@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+</head>
+<body>
+    <h2 class="show"></h2>
+    <script>
+    /* Storing multi-line JSON string in a JS variable
+    using the new ES6 template literals */
+    var json = `{
+        "book": {
+            "name": "Harry Potter and the Goblet of Fire",
+            "author": "J. K. Rowling",
+            "year": 2000,
+            "genre": "Fantasy Fiction",
+            "bestseller": true
+        }
+    }`;
+    
+    // Converting JSON object to JS object
+    var obj = JSON.parse(json);
+    console.log(obj.book.name);
+    document.querySelector('.show').innerHTML = obj.book.name
+   
+    
+    </script>
+    
+</body>
+</html>                            

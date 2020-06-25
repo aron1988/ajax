@@ -1,0 +1,77 @@
+<style>
+    .container {
+        display: flex;
+        margin: 20px;
+        padding: 10px;
+    }
+</style>
+<h1>async
+    exmple</h1>
+<div
+    class="container">
+    <div
+        class="sync">
+        <button
+            class="sync-btn">sync-btn</button>
+        <ul
+            id="sync-ul">
+        </ul>
+    </div>
+    <div
+        class="async">
+        <button
+            id="async-btn">async-btn</button>
+        <ul
+            id="async-ul">
+        </ul>
+    </div>
+    <div
+        class="long">
+        <button
+            class="long-btn">long-btn</button>
+        <ul
+            id="long-ul">
+        </ul>
+    </div>
+</div>
+<script>
+     let syncBtn = document.querySelector('.sync-btn');
+    let syncUl = document.querySelector('#sync-ul');
+    function myFunction() {
+        syncUl.innerHTML += `<li>${jobs.a()}</li>`
+        syncUl.innerHTML += `<li>${jobs.b()}</li>`
+        syncUl.innerHTML += `<li>${jobs.c()}</li>`
+        syncUl.innerHTML += `<li>${jobs.d()}</li>`
+    }
+    syncBtn.onclick = function() {
+         myFunction()
+        }
+
+    let jobs = {
+        a : function(){let time = new Date();return `a job  :${time.getMinutes()} :${time.getSeconds()} :${time.getMilliseconds()}`},
+        b : function(){let time = new Date();return `b job   :${time.getMinutes()} :${time.getSeconds()} :${time.getMilliseconds()}`},
+        c : function(){let time = new Date();return `c job  :${time.getMinutes()} :${time.getSeconds()} :${time.getMilliseconds()}`},
+        d : function(){let time = new Date();return `d job  :${time.getMinutes()} :${time.getSeconds()} :${time.getMilliseconds()}`},
+
+
+        e : function(callback){setTimeout(() => {(`    <h1>number 1</h1>
+`)},2505)},
+//         f : function(){},
+//         g : function(){let time = new Date();return `c job  :${time.getMinutes()} :${time.getSeconds()} :${time.getMilliseconds()}`},
+//         h : function(){let time = new Date();return `d job  :${time.getMinutes()} :${time.getSeconds()} :${time.getMilliseconds()}`},
+
+//    }
+//    let asyncUl = document.querySelector('#async-ul')
+//    document.querySelector('#async-btn').onclick=function(){
+    //    jobs.e(function(msg){
+    //        asyncUl.innerHTML+=CreateLiWhithTime(msg);
+    //    });
+    //    jobs.f(function(msg){
+    //        asyncUl.innerHTML+=CreateLiWhithTime(msg);
+    //    });
+   }
+
+
+   jobs.e()
+
+</script>

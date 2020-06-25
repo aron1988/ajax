@@ -1,0 +1,60 @@
+
+<div id="demo">
+        <h2>The XMLHttpRequest Object</h2>
+        <!-- <button  type="button" onclick="loadDoc1()">Show Calc</button> -->
+        <button class="btn1" type="button">Show Calc</button>
+
+        <button class="btn2" type="button">Show Text</button>
+        <h3 class="showCalc"></h3>
+        <h3  class="showText"></h3>
+
+        </div>
+        
+        <script>
+        // function loadDoc1() {
+        //   var xhttp = new XMLHttpRequest();
+        //   xhttp.onreadystatechange = function() {
+        //     if (this.readyState == 4 && this.status == 200) {
+        //       document.querySelector(".showCalc").innerHTML =
+        //       this.responseText;
+        //     }
+        //   };
+        //   xhttp.open("GET", "https://raw.githubusercontent.com/bresleveloper/db/master/ajax/comp-calc.html", true);
+        // //   xhttp.open("GET", "https://raw.githubusercontent.com/bresleveloper/db/master/ajax/say%20ho.txt", true);
+
+        //   xhttp.send();
+        // }
+        
+
+
+        function loadDoc2(url,target) {
+          var xhttp = new XMLHttpRequest();
+          xhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                target.innerHTML = this.responseText;
+            }
+          };
+          xhttp.open("GET",url);
+
+          xhttp.send();
+        }
+
+        let button1=document.querySelector('.btn1')
+        let button2=document.querySelector('.btn2')
+        let showT=document.querySelector('.showCalc')
+        let showC=document.querySelector('.showText')
+
+        button1.onclick = function(){
+            loadDoc2("https://raw.githubusercontent.com/bresleveloper/db/master/ajax/comp-calc.html",showC)
+
+        } 
+        
+        button2.onclick = function(){
+            loadDoc2("https://raw.githubusercontent.com/bresleveloper/db/master/ajax/say%20ho.txt",showT)
+
+        } 
+
+
+        
+       
+        </script>

@@ -1,0 +1,37 @@
+
+        
+        <script>
+            function getData(){
+                let xhttp = new XMLHttpRequest();
+        
+                xhttp.onreadystatechange = function(){
+                    if(xhttp.readyState==4 &&xhttp.status==200){
+                        let myJson =JSON.parse(xhttp.response);
+                        document.getElementById('dive1').innerHTML = myJson.name;
+                    }            
+                }
+                xhttp.open("GET","data.json",true)
+                xhttp.send();
+        
+            }
+        
+        
+        
+        
+        </script>
+
+        <body>
+                <input type="button" name="name" onclick="getData()" value="Click">
+                <div id="dive1"></div>
+        </body>
+        
+
+
+
+
+
+
+
+
+
+
